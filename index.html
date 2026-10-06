@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Precio de la luz hoy por horas — PVPC actualizado</title>
+<meta name="description" content="Precio de la luz hoy y mañana por horas (PVPC). Hora más barata y más cara, mejores horas para poner la lavadora o cargar el coche. Datos oficiales de Red Eléctrica.">
+<link rel="canonical" href="https://adrianezd.github.io/precio-luz-hoy/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f2b705">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Precio de la luz hoy por horas">
+<meta property="og:description" content="Hora más barata, más cara y mejores horas para la lavadora. Datos oficiales de Red Eléctrica.">
+<meta property="og:url" content="https://adrianezd.github.io/precio-luz-hoy/">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>⚡ Precio de la luz <span id="titDia">hoy</span></h1>
+  <p class="sub" id="fecha">Cargando datos de Red Eléctrica…</p>
+  <div class="tabs">
+    <button class="tab activa" data-dia="hoy">Hoy</button>
+    <button class="tab" data-dia="manana">Mañana</button>
+  </div>
+</header>
+
+<main>
+  <p id="error" class="aviso" hidden></p>
+
+  <section class="tarjeta ahora" id="bloqueAhora">
+    <div class="etq" id="etqAhora">Ahora</div>
+    <div class="grande"><span id="precioAhora">–</span> <small>€/kWh</small></div>
+    <div class="nivel" id="nivelAhora"></div>
+  </section>
+
+  <section class="cifras">
+    <div class="tarjeta"><div class="etq">Más barata</div><b id="minP">–</b><span id="minH"></span></div>
+    <div class="tarjeta"><div class="etq">Más cara</div><b id="maxP">–</b><span id="maxH"></span></div>
+    <div class="tarjeta"><div class="etq">Media</div><b id="medP">–</b><span>del día</span></div>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Precio por horas</h2>
+    <div id="grafica" class="grafica"></div>
+  </section>
+
+  <section class="tarjeta">
+    <h2>Mejores horas para</h2>
+    <ul class="mejores" id="mejores"></ul>
+  </section>
+
+  <section class="tarjeta">
+    <h2>¿Cuánto me cuesta?</h2>
+    <div class="calc">
+      <select id="aparato">
+        <option value="2|1">Lavadora, 1 hora</option>
+        <option value="1.8|1.5">Lavavajillas, 1,5 horas</option>
+        <option value="2.5|1">Secadora, 1 hora</option>
+        <option value="2|0.5">Horno, 30 minutos</option>
+        <option value="1|1">Aire acondicionado, 1 hora</option>
+        <option value="7.4|4">Coche eléctrico, 4 horas</option>
+      </select>
+      <select id="horaCalc"></select>
+    </div>
+    <p class="resultado" id="coste"></p>
+  </section>
+
+  <section class="tarjeta">
+    <button class="boton" id="compartir">Compartir</button>
+  </section>
+
+  <section class="texto">
+    <h2>Sobre estos datos</h2>
+    <p>Es el precio del término de energía del PVPC, la tarifa regulada 2.0TD de la península, tal como lo publica Red Eléctrica. Incluye peajes y cargos, pero no impuestos ni el término de potencia. Red Eléctrica publica el precio de mañana cada tarde, hacia las 20:30.</p>
+    <p>Los colores comparan cada hora con el resto del día: el verde es el tercio más barato y el rojo el más caro.</p>
+  </section>
+</main>
+<footer>Fuente: <a href="https://www.ree.es/es/apidatos" rel="noopener">REData, Red Eléctrica</a></footer>
+<script src="script.js"></script>
+</body>
+</html>

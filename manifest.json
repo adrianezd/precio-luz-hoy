@@ -1,0 +1,12 @@
+{
+  "name": "Precio de la luz hoy",
+  "short_name": "Luz hoy",
+  "description": "Precio de la luz hoy y mañana por horas, con datos de Red Eléctrica.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2b705",
+  "theme_color": "#f2b705",
+  "lang": "es",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

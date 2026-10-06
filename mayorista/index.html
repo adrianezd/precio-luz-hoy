@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Precio de la luz en el mercado mayorista hoy — Cuartos de hora</title>
+<meta name="description" content="Precio del mercado mayorista de electricidad (pool, OMIE) de hoy y mañana en tramos de 15 minutos, con el mínimo, el máximo y la media. Datos de Red Eléctrica.">
+<link rel="canonical" href="https://adrianezd.github.io/precio-luz-hoy/mayorista/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta name="theme-color" content="#f2b705">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Precio mayorista de la luz hoy">
+<meta property="og:description" content="El pool eléctrico en tramos de 15 minutos, hoy y mañana.">
+<meta property="og:url" content="https://adrianezd.github.io/precio-luz-hoy/mayorista/">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="../style.css">
+<style>.grafica { gap: 0; } .barra { border-radius: 0; } .barra .h { display: none; } .barra.marca .h { display: block; }</style>
+</head>
+<body>
+<header class="top">
+  <h1>📈 Mercado mayorista <span id="titDia">hoy</span></h1>
+  <p class="sub" id="fecha">Cargando datos de Red Eléctrica…</p>
+  <div class="tabs">
+    <button class="tab activa" data-dia="hoy">Hoy</button>
+    <button class="tab" data-dia="manana">Mañana</button>
+  </div>
+</header>
+<main>
+  <p id="error" class="aviso" hidden></p>
+  <section class="tarjeta ahora" id="bloqueAhora">
+    <div class="etq" id="etqAhora">Ahora</div>
+    <div class="grande"><span id="precioAhora">–</span> <small>€/MWh</small></div>
+  </section>
+  <section class="cifras">
+    <div class="tarjeta"><div class="etq">Mínimo</div><b id="minP">–</b><span id="minH"></span></div>
+    <div class="tarjeta"><div class="etq">Máximo</div><b id="maxP">–</b><span id="maxH"></span></div>
+    <div class="tarjeta"><div class="etq">Media</div><b id="medP">–</b><span>€/MWh</span></div>
+  </section>
+  <section class="tarjeta">
+    <h2>Precio cada 15 minutos</h2>
+    <div id="grafica" class="grafica"></div>
+  </section>
+  <section class="texto">
+    <h2>Qué es el precio mayorista</h2>
+    <p>Es el precio al que se compra y vende la electricidad en el mercado diario, el pool de OMIE, para la península. Desde octubre de 2025 se negocia en tramos de 15 minutos. Es la base del precio que pagan las tarifas reguladas e indexadas, pero no incluye peajes, cargos ni impuestos.</p>
+    <p>Si tienes la tarifa regulada, lo que te interesa es el <a href="../">precio de la luz PVPC por horas</a>.</p>
+  </section>
+</main>
+<footer>Fuente: <a href="https://www.ree.es/es/apidatos" rel="noopener">REData, Red Eléctrica</a> · <a href="../">Precio de la luz hoy</a></footer>
+<script src="mayorista.js"></script>
+</body>
+</html>
